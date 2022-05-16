@@ -1,0 +1,42 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <title>Виконавці</title>
+    <link rel="stylesheet" href="css/site.css" />
+    <link rel="stylesheet" href="css/StyleSheet.css" />
+</head>
+<body>
+    <div id="st">
+        <h1>Виконавці</h1>
+        <h3>Додати виконавця</h3>
+
+        <form action="javascript:void(0);" method="POST" onsubmit="addPerformer()">
+            <input type="text" id="add-name" />
+            <input type="submit" value="Додати" />
+        </form><br /><br />
+
+        <div id="editPerformer">
+            <h3>Редагувати виконавця</h3>
+            <form action="javascript:void(0);" onsubmit="updatePerformer()">
+                <input type="hidden" id="edit-id" />
+                <input type="text" id="edit-name" />
+                <input type="submit" value="Зберегти" />
+                <a onclick="closeInput()" aria-label="Close">&times;</a>
+            </form>
+        </div><br /><br />
+
+        <table>
+            <tr>
+                <th>Ім'я виконавця</th>
+            </tr>
+            <tbody id="performers"></tbody>
+        </table>
+
+        <script src="js/lab2.js" asp-append-version="true"></script>
+        <script type="text/javascript">
+            getPerformers();
+        </script>
+    </div>
+</body>
+</html>
